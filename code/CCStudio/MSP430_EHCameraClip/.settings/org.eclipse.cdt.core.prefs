@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/com.ti.ccstudio.buildDefinitions.MSP430.Debug.795665596/PATH/delimiter=\:
+environment/project/com.ti.ccstudio.buildDefinitions.MSP430.Debug.795665596/PATH/operation=replace
+environment/project/com.ti.ccstudio.buildDefinitions.MSP430.Debug.795665596/PATH/value=/usr/local/argyll/bin/\:/opt/android/sdk/platform-tools\:/opt/android/sdk/tools\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games\:/opt/gams\:/opt/gurobi/linux64/bin\:/opt/mips/bin\:/opt/energia-0101E0015
+environment/project/com.ti.ccstudio.buildDefinitions.MSP430.Debug.795665596/append=true
+environment/project/com.ti.ccstudio.buildDefinitions.MSP430.Debug.795665596/appendContributed=true

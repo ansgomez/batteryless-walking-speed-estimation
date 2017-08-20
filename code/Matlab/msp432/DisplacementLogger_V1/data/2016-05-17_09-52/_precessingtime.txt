@@ -1,0 +1,10 @@
+===== Image Processing =====
+
+Block Matching: 	87 ms (measured, compiler:optimized)
+blocks: 16x16, searcharea: +-8, +-8
+
+===== 10 bit implementation =====
+Clock Frequency: 48 MHz
+Dividers for Timers and ADC: 6		-> 48 MHz / 6 = 8 MHz
+-> ADC_TIMER_CYCLES = 17		-> Acquisition of one pixel: 17/8MHz = 2.125 µs
+-> 112*112 pixels			-> Acquisition of one image: 26.7 ms	~ 37 images per second

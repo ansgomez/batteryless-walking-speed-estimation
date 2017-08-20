@@ -1,0 +1,495 @@
+******************************************************************************
+                  TI ARM Linker Unix v5.2.5                    
+******************************************************************************
+>> Linked Thu May 19 11:25:06 2016
+
+OUTPUT FILE NAME:   <MSP432_DisplacementLogger_V1.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002349
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  00002de0  0003d220  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  00000000  00010000  RW X
+  SRAM_DATA             20000000   00010000  00009757  000068a9  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002de0   00002de0    r-x
+  00000000    00000000    00000140   00000140    r-- .intvecs
+  00000140    00000140    000028a8   000028a8    r-x .text
+  000029e8    000029e8    000002f0   000002f0    r-- .const
+  00002cd8    00002cd8    00000108   00000108    r-- .cinit
+20000000    20000000    00009557   00000000    rw-
+  20000000    20000000    00009544   00000000    rw- .data
+  20009544    20009544    00000013   00000000    rw- .bss
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000140     
+                  00000000    00000140     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.text      0    00000140    000028a8     
+                  00000140    00000a08     sd_diskio.obj (.text)
+                  00000b48    000005dc     camera.obj (.text)
+                  00001124    00000378     system_msp432p401r.obj (.text)
+                  0000149c    000002a4     main.obj (.text)
+                  00001740    0000029c     cypress_fram.obj (.text)
+                  000019dc    00000178     image_processing.obj (.text)
+                  00001b54    00000154     msp432p4xx_driverlib.lib : adc14.o (.text:_getIndexForMemRegister)
+                  00001ca8    00000104                              : cs.o (.text:CS_getDCOFrequency)
+                  00001dac    000000b4     serial.obj (.text)
+                  00001e60    000000b2     msp432p4xx_driverlib.lib : timer_a.o (.text:privateTimer_AProcessClockSourceDivider)
+                  00001f12    00000002     --HOLE-- [fill = 0]
+                  00001f14    0000009c                              : cs.o (.text:_CSComputeCLKFrequency)
+                  00001fb0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  0000204c    00000088     msp432p4xx_driverlib.lib : spi.o (.text:SPI_initMaster)
+                  000020d4    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  0000214e    00000002     --HOLE-- [fill = 0]
+                  00002150    0000006c     msp432p4xx_driverlib.lib : adc14.o (.text:ADC14_configureConversionMemory)
+                  000021bc    0000006c     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
+                  00002228    0000006a                                   : copy_decompress_rle.obj (.text)
+                  00002292    00000002     --HOLE-- [fill = 0]
+                  00002294    00000064     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_enableInterrupt)
+                  000022f8    00000050                              : sysctl.o (.text:SysCtl_getTLVInfo)
+                  00002348    00000050     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00002398    0000004c     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_setAsPeripheralModuleFunctionOutputPin)
+                  000023e4    0000004c                              : cs.o (.text:_CSGetDOCFrequency)
+                  00002430    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  0000247c    00000048     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_setAsPeripheralModuleFunctionInputPin)
+                  000024c4    00000048                              : cs.o (.text:_CSGetDividerValue)
+                  0000250c    00000044                              : adc14.o (.text:ADC14_configureSingleSampleMode)
+                  00002550    00000044                              : timer_a.o (.text:Timer_A_configureUpMode)
+                  00002594    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.text)
+                  000025d8    00000038     msp432p4xx_driverlib.lib : adc14.o (.text:ADC14_initModule)
+                  00002610    00000030                              : gpio.o (.text:GPIO_setAsInputPinWithPullUpResistor)
+                  00002640    00000030                              : spi.o (.text:is_A_Module)
+                  00002670    0000002c                              : adc14.o (.text:ADC14_enableConversion)
+                  0000269c    00000028                              : adc14.o (.text:ADC14_enableSampleTimer)
+                  000026c4    00000026                              : spi.o (.text:SPI_changeMasterClock)
+                  000026ea    00000026                              : timer_a.o (.text:Timer_A_initCompare)
+                  00002710    00000024                              : cs.o (.text:CS_clearInterruptFlag)
+                  00002734    00000024                              : gpio.o (.text:GPIO_setAsOutputPin)
+                  00002758    00000024                              : uart.o (.text:UART_transmitData)
+                  0000277c    00000020                              : adc14.o (.text:ADC14_enableInterrupt)
+                  0000279c    00000020                              : adc14.o (.text:ADC14_toggleConversionTrigger)
+                  000027bc    0000001a                              : spi.o (.text:SPI_enableModule)
+                  000027d6    00000002     --HOLE-- [fill = 0]
+                  000027d8    00000018                              : adc14.o (.text:ADC14_getResult)
+                  000027f0    00000018                              : cs.o (.text:CS_getSMCLK)
+                  00002808    00000018                              : spi.o (.text:EUSCI_A_SPI_masterChangeClock)
+                  00002820    00000018                              : spi.o (.text:EUSCI_B_SPI_masterChangeClock)
+                  00002838    00000018                              : gpio.o (.text:GPIO_getInputPinValue)
+                  00002850    00000018                              : gpio.o (.text:GPIO_setOutputLowOnPin)
+                  00002868    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00002880    00000016     msp432p4xx_driverlib.lib : uart.o (.text:UART_enableInterrupt)
+                  00002896    00000002     --HOLE-- [fill = 0]
+                  00002898    00000014                              : adc14.o (.text:ADC14_setResolution)
+                  000028ac    00000014                              : adc14.o (.text:ADCIsConversionRunning)
+                  000028c0    00000014                              : gpio.o (.text:GPIO_setOutputHighOnPin)
+                  000028d4    00000014                              : systick.o (.text:SysTick_disableInterrupt)
+                  000028e8    00000014                              : systick.o (.text:SysTick_disableModule)
+                  000028fc    00000014                              : systick.o (.text:SysTick_enableInterrupt)
+                  00002910    00000014                              : systick.o (.text:SysTick_enableModule)
+                  00002924    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00002938    00000014                                   : strlen.obj (.text)
+                  0000294c    00000012     startup_msp432p401r_ccs.obj (.text)
+                  0000295e    00000002     --HOLE-- [fill = 0]
+                  00002960    00000010     msp432p4xx_driverlib.lib : adc14.o (.text:ADC14_enableModule)
+                  00002970    00000010                              : interrupt.o (.text:Interrupt_enableMaster)
+                  00002980    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000298e    0000000c     msp432p4xx_driverlib.lib : cpu.o (.text:CPU_cpsie)
+                  0000299a    0000000c                              : spi.o (.text:EUSCI_A_SPI_enable)
+                  000029a6    0000000c                              : spi.o (.text:EUSCI_B_SPI_enable)
+                  000029b2    00000002     --HOLE-- [fill = 0]
+                  000029b4    0000000c                              : systick.o (.text:SysTick_setPeriod)
+                  000029c0    0000000c                              : uart.o (.text:UART_disableModule)
+                  000029cc    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  000029d8    00000006     msp432p4xx_driverlib.lib : uart.o (.text:UART_getInterruptStatus)
+                  000029de    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  000029e4    00000004                                   : pre_init.obj (.text)
+
+.const     0    000029e8    000002f0     
+                  000029e8    0000013a     sd_diskio.obj (.const:.string)
+                  00002b22    00000002     --HOLE-- [fill = 0]
+                  00002b24    00000098     camera.obj (.const)
+                  00002bbc    00000080     msp432p4xx_driverlib.lib : adc14.o (.const:_ctlRegs)
+                  00002c3c    00000040                              : interrupt.o (.const)
+                  00002c7c    00000024     serial.obj (.const:$P$T0$1)
+                  00002ca0    0000001c     cypress_fram.obj (.const)
+                  00002cbc    0000001c     sd_diskio.obj (.const)
+
+.cinit     0    00002cd8    00000108     
+                  00002cd8    000000e3     (.cinit..data.load) [load image, compression = rle]
+                  00002dbb    00000001     --HOLE-- [fill = 0]
+                  00002dbc    0000000c     (__TI_handler_table)
+                  00002dc8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00002dd0    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000000    00009544     UNINITIALIZED
+                  20000000    00003100     main.obj (.data:image_buffer1)
+                  20003100    00003100     main.obj (.data:image_buffer2)
+                  20006200    00003100     main.obj (.data:mask_buffer)
+                  20009300    000000a9     main.obj (.data:dx)
+                  200093a9    000000a9     main.obj (.data:dy)
+                  20009452    00000002     sd_diskio.obj (.data)
+                  20009454    000000a0     sd_diskio.obj (.data:g_psFResultStrings)
+                  200094f4    00000030     msp432p4xx_driverlib.lib : gpio.o (.data:GPIO_PORT_TO_BASE)
+                  20009524    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  2000952c    00000008                                   : exit.obj (.data)
+                  20009534    00000005     camera.obj (.data)
+                  20009539    00000003     --HOLE--
+                  2000953c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+                  20009540    00000004     system_msp432p401r.obj (.data)
+
+.TI.persistent 
+*          0    20000000    00000000     UNINITIALIZED
+
+.bss       0    20009544    00000013     UNINITIALIZED
+                  20009544    00000004     (.common:hfxtFreq)
+                  20009548    00000004     (.common:image_base)
+                  2000954c    00000004     (.common:lfxtFreq)
+                  20009550    00000004     (.common:mask_base)
+                  20009554    00000001     (.common:CardType)
+                  20009555    00000001     (.common:Timer1)
+                  20009556    00000001     (.common:Timer2)
+
+.TI.noinit 
+*          0    20009544    00000000     UNINITIALIZED
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000200     --HOLE--
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002dd0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00002cd8, load size=000000e3 bytes, run addr=20000000, run size=00009544 bytes, compression=rle
+	.bss: load addr=00002dc8, load size=00000008 bytes, run addr=20009544, run size=00000013 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002dbc records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                       
+-------   ----                                       
+00002151  ADC14_configureConversionMemory            
+0000250d  ADC14_configureSingleSampleMode            
+00002671  ADC14_enableConversion                     
+0000277d  ADC14_enableInterrupt                      
+00002961  ADC14_enableModule                         
+0000269d  ADC14_enableSampleTimer                    
+000027d9  ADC14_getResult                            
+000025d9  ADC14_initModule                           
+00002899  ADC14_setResolution                        
+0000279d  ADC14_toggleConversionTrigger              
+00002595  C$$EXIT                                    
+0000298f  CPU_cpsie                                  
+00002711  CS_clearInterruptFlag                      
+00001ca9  CS_getDCOFrequency                         
+000027f1  CS_getSMCLK                                
+00000f51  Camera_ADC14_ISR                           
+00000ce5  Camera_configure                           
+00000d65  Camera_connectPWM                          
+00000e39  Camera_defineMask                          
+00000d51  Camera_disable                             
+00000d91  Camera_disconnectPWM                       
+00000d3d  Camera_enable                              
+00000b49  Camera_init                                
+00000d37  Camera_isBusy                              
+00000dd5  Camera_pulse                               
+00000df9  Camera_pulseMulti                          
+00000e49  Camera_readImage                           
+00000f05  Camera_readPixel                           
+00000f21  Camera_selectRegister                      
+00000fd9  Camera_startAquire                         
+000010ab  Camera_turnPowerOff                        
+00001079  Camera_turnPowerOn                         
+000010bf  Camera_writeRegister                       
+0000299b  EUSCI_A_SPI_enable                         
+00002809  EUSCI_A_SPI_masterChangeClock              
+000029a7  EUSCI_B_SPI_enable                         
+00002821  EUSCI_B_SPI_masterChangeClock              
+00001777  EXTFRAM_init                               
+000017a3  EXTFRAM_initGPIO                           
+00001817  EXTFRAM_powerOff                           
+000017e5  EXTFRAM_powerOn                            
+0000185b  EXTFRAM_read                               
+00001999  EXTFRAM_sleep                              
+000019b5  EXTFRAM_wakeup                             
+000018f1  EXTFRAM_write                              
+00002839  GPIO_getInputPinValue                      
+00002611  GPIO_setAsInputPinWithPullUpResistor       
+00002735  GPIO_setAsOutputPin                        
+0000247d  GPIO_setAsPeripheralModuleFunctionInputPin 
+00002399  GPIO_setAsPeripheralModuleFunctionOutputPin
+000028c1  GPIO_setOutputHighOnPin                    
+00002851  GPIO_setOutputLowOnPin                     
+00002295  Interrupt_enableInterrupt                  
+00002971  Interrupt_enableMaster                     
+00000a8f  SDcard_SPI_init                            
+00000b21  SDcard_disable                             
+00000b03  SDcard_enable                              
+UNDEFED   SHT$$INIT_ARRAY$$Base                      
+UNDEFED   SHT$$INIT_ARRAY$$Limit                     
+000026c5  SPI_changeMasterClock                      
+000027bd  SPI_enableModule                           
+0000204d  SPI_initMaster                             
+00001741  SPI_transceive                             
+00001dad  Serial_init                                
+00001dff  Serial_sendChar                            
+00001e1f  Serial_sendString                          
+00000149  StringFromFResult                          
+000022f9  SysCtl_getTLVInfo                          
+00000141  SysTick_ISR                                
+000028d5  SysTick_disableInterrupt                   
+000028e9  SysTick_disableModule                      
+000028fd  SysTick_enableInterrupt                    
+00002911  SysTick_enableModule                       
+000029b5  SysTick_setPeriod                          
+20009540  SystemCoreClock                            
+00001125  SystemCoreClockUpdate                      
+00001399  SystemInit                                 
+00002551  Timer_A_configureUpMode                    
+000026eb  Timer_A_initCompare                        
+000029c1  UART_disableModule                         
+00002881  UART_enableInterrupt                       
+000029d9  UART_getInterruptStatus                    
+00002759  UART_transmitData                          
+4000480c  WDTCTL_SYM                                 
+20010000  __STACK_END                                
+00000200  __STACK_SIZE                               
+00002dd0  __TI_CINIT_Base                            
+00002de0  __TI_CINIT_Limit                           
+00002dbc  __TI_Handler_Table_Base                    
+00002dc8  __TI_Handler_Table_Limit                   
+000021bd  __TI_auto_init                             
+2000952c  __TI_cleanup_ptr                           
+00002981  __TI_decompress_none                       
+000029df  __TI_decompress_rle24                      
+20009530  __TI_dtors_ptr                             
+00000000  __TI_static_base__                         
+000029cd  __TI_zero_init                             
+000020d5  __aeabi_memclr                             
+000020d5  __aeabi_memclr4                            
+000020d5  __aeabi_memclr8                            
+00001fb1  __aeabi_memcpy                             
+00001fb1  __aeabi_memcpy4                            
+00001fb1  __aeabi_memcpy8                            
+000020d7  __aeabi_memset                             
+000020d7  __aeabi_memset4                            
+000020d7  __aeabi_memset8                            
+ffffffff  __binit__                                  
+ffffffff  __c_args__                                 
+2000fe00  __stack                                    
+00002869  _args_main                                 
+00002349  _c_int00                                   
+20009524  _lock                                      
+00002933  _nop                                       
+0000292b  _register_lock                             
+00002925  _register_unlock                           
+000029e5  _system_pre_init                           
+20009528  _unlock                                    
+00002599  abort                                      
+ffffffff  binit                                      
+000019dd  block_matching                             
+20009538  camera_busy                                
+00002431  copy_in                                    
+000004f5  disk_initialize                            
+00000849  disk_ioctl                                 
+000006af  disk_read                                  
+00000695  disk_status                                
+00000a47  disk_timerproc                             
+0000075b  disk_write                                 
+20009300  dx                                         
+200093a9  dy                                         
+000025a1  exit                                       
+20009454  g_psFResultStrings                         
+00000a8b  get_fattime                                
+20009548  image_base                                 
+20000000  image_buffer1                              
+20003100  image_buffer2                              
+00000000  interruptVectors                           
+0000149d  main                                       
+2000953c  main_func_sp                               
+20009550  mask_base                                  
+20006200  mask_buffer                                
+00001fb1  memcpy                                     
+000020dd  memset                                     
+20009534  pixel_counter                              
+00002939  strlen                                     
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                       
+-------   ----                                       
+00000000  __TI_static_base__                         
+00000000  interruptVectors                           
+00000141  SysTick_ISR                                
+00000149  StringFromFResult                          
+00000200  __STACK_SIZE                               
+000004f5  disk_initialize                            
+00000695  disk_status                                
+000006af  disk_read                                  
+0000075b  disk_write                                 
+00000849  disk_ioctl                                 
+00000a47  disk_timerproc                             
+00000a8b  get_fattime                                
+00000a8f  SDcard_SPI_init                            
+00000b03  SDcard_enable                              
+00000b21  SDcard_disable                             
+00000b49  Camera_init                                
+00000ce5  Camera_configure                           
+00000d37  Camera_isBusy                              
+00000d3d  Camera_enable                              
+00000d51  Camera_disable                             
+00000d65  Camera_connectPWM                          
+00000d91  Camera_disconnectPWM                       
+00000dd5  Camera_pulse                               
+00000df9  Camera_pulseMulti                          
+00000e39  Camera_defineMask                          
+00000e49  Camera_readImage                           
+00000f05  Camera_readPixel                           
+00000f21  Camera_selectRegister                      
+00000f51  Camera_ADC14_ISR                           
+00000fd9  Camera_startAquire                         
+00001079  Camera_turnPowerOn                         
+000010ab  Camera_turnPowerOff                        
+000010bf  Camera_writeRegister                       
+00001125  SystemCoreClockUpdate                      
+00001399  SystemInit                                 
+0000149d  main                                       
+00001741  SPI_transceive                             
+00001777  EXTFRAM_init                               
+000017a3  EXTFRAM_initGPIO                           
+000017e5  EXTFRAM_powerOn                            
+00001817  EXTFRAM_powerOff                           
+0000185b  EXTFRAM_read                               
+000018f1  EXTFRAM_write                              
+00001999  EXTFRAM_sleep                              
+000019b5  EXTFRAM_wakeup                             
+000019dd  block_matching                             
+00001ca9  CS_getDCOFrequency                         
+00001dad  Serial_init                                
+00001dff  Serial_sendChar                            
+00001e1f  Serial_sendString                          
+00001fb1  __aeabi_memcpy                             
+00001fb1  __aeabi_memcpy4                            
+00001fb1  __aeabi_memcpy8                            
+00001fb1  memcpy                                     
+0000204d  SPI_initMaster                             
+000020d5  __aeabi_memclr                             
+000020d5  __aeabi_memclr4                            
+000020d5  __aeabi_memclr8                            
+000020d7  __aeabi_memset                             
+000020d7  __aeabi_memset4                            
+000020d7  __aeabi_memset8                            
+000020dd  memset                                     
+00002151  ADC14_configureConversionMemory            
+000021bd  __TI_auto_init                             
+00002295  Interrupt_enableInterrupt                  
+000022f9  SysCtl_getTLVInfo                          
+00002349  _c_int00                                   
+00002399  GPIO_setAsPeripheralModuleFunctionOutputPin
+00002431  copy_in                                    
+0000247d  GPIO_setAsPeripheralModuleFunctionInputPin 
+0000250d  ADC14_configureSingleSampleMode            
+00002551  Timer_A_configureUpMode                    
+00002595  C$$EXIT                                    
+00002599  abort                                      
+000025a1  exit                                       
+000025d9  ADC14_initModule                           
+00002611  GPIO_setAsInputPinWithPullUpResistor       
+00002671  ADC14_enableConversion                     
+0000269d  ADC14_enableSampleTimer                    
+000026c5  SPI_changeMasterClock                      
+000026eb  Timer_A_initCompare                        
+00002711  CS_clearInterruptFlag                      
+00002735  GPIO_setAsOutputPin                        
+00002759  UART_transmitData                          
+0000277d  ADC14_enableInterrupt                      
+0000279d  ADC14_toggleConversionTrigger              
+000027bd  SPI_enableModule                           
+000027d9  ADC14_getResult                            
+000027f1  CS_getSMCLK                                
+00002809  EUSCI_A_SPI_masterChangeClock              
+00002821  EUSCI_B_SPI_masterChangeClock              
+00002839  GPIO_getInputPinValue                      
+00002851  GPIO_setOutputLowOnPin                     
+00002869  _args_main                                 
+00002881  UART_enableInterrupt                       
+00002899  ADC14_setResolution                        
+000028c1  GPIO_setOutputHighOnPin                    
+000028d5  SysTick_disableInterrupt                   
+000028e9  SysTick_disableModule                      
+000028fd  SysTick_enableInterrupt                    
+00002911  SysTick_enableModule                       
+00002925  _register_unlock                           
+0000292b  _register_lock                             
+00002933  _nop                                       
+00002939  strlen                                     
+00002961  ADC14_enableModule                         
+00002971  Interrupt_enableMaster                     
+00002981  __TI_decompress_none                       
+0000298f  CPU_cpsie                                  
+0000299b  EUSCI_A_SPI_enable                         
+000029a7  EUSCI_B_SPI_enable                         
+000029b5  SysTick_setPeriod                          
+000029c1  UART_disableModule                         
+000029cd  __TI_zero_init                             
+000029d9  UART_getInterruptStatus                    
+000029df  __TI_decompress_rle24                      
+000029e5  _system_pre_init                           
+00002dbc  __TI_Handler_Table_Base                    
+00002dc8  __TI_Handler_Table_Limit                   
+00002dd0  __TI_CINIT_Base                            
+00002de0  __TI_CINIT_Limit                           
+20000000  image_buffer1                              
+20003100  image_buffer2                              
+20006200  mask_buffer                                
+20009300  dx                                         
+200093a9  dy                                         
+20009454  g_psFResultStrings                         
+20009524  _lock                                      
+20009528  _unlock                                    
+2000952c  __TI_cleanup_ptr                           
+20009530  __TI_dtors_ptr                             
+20009534  pixel_counter                              
+20009538  camera_busy                                
+2000953c  main_func_sp                               
+20009540  SystemCoreClock                            
+20009548  image_base                                 
+20009550  mask_base                                  
+2000fe00  __stack                                    
+20010000  __STACK_END                                
+4000480c  WDTCTL_SYM                                 
+ffffffff  __binit__                                  
+ffffffff  __c_args__                                 
+ffffffff  binit                                      
+UNDEFED   SHT$$INIT_ARRAY$$Base                      
+UNDEFED   SHT$$INIT_ARRAY$$Limit                     
+
+[145 symbols]

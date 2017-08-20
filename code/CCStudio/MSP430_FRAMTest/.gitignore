@@ -1,0 +1,9 @@
+doc
+Debug
+Release
+.config
+.launches
+image*.png
+image*.bin
+mask.png
+mask.bin

@@ -1,0 +1,60 @@
+//	    /* Setting reference voltage to 2.5  and enabling reference */
+//	    MAP_REF_A_setReferenceVoltage(REF_A_VREF2_5V);
+//	    MAP_REF_A_enableReferenceVoltage();
+//
+//	    /* Initializing ADC (MCLK/1/1) */
+//	    MAP_ADC14_enableModule();
+//	    MAP_ADC14_initModule(ADC_CLOCKSOURCE_SMCLK, ADC_PREDIVIDER_1, ADC_DIVIDER_1, 0);
+//
+//	    /* Configuring GPIOs for Analog In */
+//	    MAP_GPIO_setAsPeripheralModuleFunctionInputPin(CAMERA_PORT_ANALOG, CAMERA_PIN_ANALOG, GPIO_TERTIARY_MODULE_FUNCTION);
+//
+//	    /* Configuring ADC Memory (ADC_MEM0 - ADC_MEM7 (A0 - A1)  with no repeat)
+//	     * with internal 2.5v reference */
+//	    ADC14_configureSingleSampleMode(ADC_MEM11, true);
+//	    ADC14_configureConversionMemory(ADC_MEM11,
+//	            ADC_VREFPOS_INTBUF_VREFNEG_VSS,
+//	            ADC_INPUT_A11, false);
+//
+//	    /* Configuring DMA module */
+//	    MAP_DMA_enableModule();
+//	    MAP_DMA_setControlBase(controlTable);
+//
+//	    /*
+//	     * Primary DMA Channel, ADC12C
+//	     * Size = 16bits
+//	     * Source Increment = 16bits
+//	     * Destination Increment = 16bits
+//	     * Arbitration = 1 , no other sources
+//	     */
+//
+//	    MAP_DMA_setChannelControl(UDMA_PRI_SELECT | DMA_CH7_ADC14,
+//	        UDMA_SIZE_16 | UDMA_SRC_INC_NONE | UDMA_DST_INC_16 | UDMA_ARB_1);
+//
+//	    MAP_DMA_setChannelTransfer(UDMA_PRI_SELECT | DMA_CH7_ADC14,
+//	        UDMA_MODE_AUTO, (void*) &ADC14->MEM[11],
+//			image_buffer,
+//			1024);
+//
+//	    /* Assigning/Enabling Interrupts */
+//	    MAP_DMA_assignInterrupt(DMA_INT1, 7);
+//	    MAP_Interrupt_enableInterrupt(INT_DMA_INT1);
+//	    MAP_DMA_assignChannel(DMA_CH7_ADC14);
+//	    MAP_DMA_clearInterruptFlag(7);
+//	    MAP_Interrupt_enableMaster();
+//
+//	    /* Now that the DMA is primed and setup, enabling the channels. The ADC14
+//	     * hardware should take over and transfer/receive all bytes.The DMA is
+//	     * triggered after the conversion in single-channel conversion mode or
+//	     * after the completion of a sequence of channel conversions in
+//	     * sequence-ofchannels conversion mode. */
+//	    MAP_DMA_enableChannel(7);
+//
+//	    /* Setting up the sample timer to automatically step through the sequence
+//	     * convert.
+//	     */
+//	    ADC14_enableSampleTimer(ADC_AUTOMATIC_ITERATION);
+//
+//	    /* Triggering the start of the sample */
+//	    MAP_ADC14_enableConversion();
+//	    MAP_ADC14_toggleConversionTrigger();

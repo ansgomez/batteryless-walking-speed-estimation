@@ -1,0 +1,10 @@
+#ifndef CAMERA_FPN_H_
+#define CAMERA_FPN_H_
+
+#include <stdint.h>
+
+#include "camera.h"
+
+const uint8_t camera_fpn[CAMERA_IMAGE_SIZE_ROW][CAMERA_IMAGE_SIZE_COL] = <<CAMERA_FPN_DATA>>
+
+#endif /* CAMERA_FPN_H_ */
