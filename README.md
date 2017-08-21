@@ -11,6 +11,8 @@ Batteryless Camera and Walking Speed Estimation
 
    [Batteryless Walking Speed Estimation Paper](https://pub.tik.ee.ethz.ch/people/sigristl/GSSBT2017.pdf)
    
+   [Non-Volatile Memory Hierarchy Paper](https://pub.tik.ee.ethz.ch/people/sigristl/GSSBT2017a.pdf)
+   
    Please cite as:
    
    Gomez A, Sigrist L, Magno M, Benini L, Thiele L.
@@ -20,6 +22,10 @@ Batteryless Camera and Walking Speed Estimation
    Gomez A, Sigrist L, Schalch T, Benini L, Thiele L.
    Wearable, Energy-Opportunistic Vision Sensing for Walking Speed Estimation.
    In Proceedings of Sensors Applications Symposium (SAS). 2017. IEEE.
+
+   Gomez A, Sigrist L, Schalch T, Benini L, Thiele L.
+   Efficient, Long-Term Logging of Rich Data Sensors using Transient Sensor Nodes.
+   Transactions on Embedded Computing Systems. 2018. ACM.
    
 ### Software
 
